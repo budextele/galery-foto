@@ -147,3 +147,36 @@ h1 {
         margin-top: 0;
     }
 }
+
+@media only screen and (max-width: 780px) {
+    .container {
+        max-width: 600px;
+    }
+
+    .gallery li {
+        transform: scale(0.8);
+        margin: 15px 15px;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    .container {
+        max-width: 420px;
+    }
+
+    .gallery li {
+        transform: scale(0.7);
+        margin: 15px 10px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        max-width: 200px;
+    }
+
+    .gallery li {
+        transform: scale(0.7);
+        margin: 10px 10px 10px 40px;
+    }
+}
