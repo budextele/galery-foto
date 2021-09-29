@@ -1,0 +1,149 @@
+/* font */
+/*
+@font-face {
+    font-family: 'BebasNeue';
+    src: url(..fonts/BebasNeue-Regular.woff) format('woff');
+}*/
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+
+/* style utama */
+body {
+    font: 18px/36px 'Boogaloo', cursive;
+    background-image: url(../img/purty_wood.png);
+}
+
+h1 {
+    font-size: 80px;
+    margin: 50px 0;
+    text-align: center;
+    text-shadow: 1px 1px 1px white;
+}
+
+.container {
+    max-width: 700px;
+    background-image: url(../img/extra_clean_paper.png);
+    margin: auto;
+    padding: 30px;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, .3);
+    border-radius: 5px;
+}
+
+.gallery li {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    /*border: 5px solid rgb(253, 224, 0);*/
+    box-shadow: 0 0 2px 3px rgba(0, 0, 0, .7);
+    float: left;
+    margin: 25px 25px;
+    position: relative;
+}
+
+.gallery li img {
+    border-radius: 50%;
+}
+
+.gallery li span {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    line-height: 120px;
+    color: #333;
+    text-shadow: 1px 1px 1px #ddd;
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+    transition: .3s;
+    font-family: 'Niconne', cursive;
+}
+
+.gallery li a:hover span {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+}
+
+.clear {
+    clear: both;
+}
+
+/*overlay*/
+.overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 999999;
+    transition: .9s;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.overlay:target {
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.overlay .full {
+    max-height: 100%;
+    border-radius: 0%;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, .5);
+}
+
+.overlay:target .full {
+    animation: zoomDanFade 1s;
+}
+
+.overlay .close {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -20px;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    border: 1px solid white;
+    line-height: normal;
+    opacity: 0;
+}
+
+.overlay:target .close {
+    animation: tombolClose .5s .5s forwards;
+}
+
+/*animasi*/
+@keyframes zoomDanFade {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes tombolClose {
+    0% {
+        opacity: 0;
+        margin-top: -20px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
