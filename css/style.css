@@ -37,7 +37,7 @@ h1 {
     /*border: 5px solid rgb(253, 224, 0);*/
     box-shadow: 0 0 2px 3px rgba(0, 0, 0, .7);
     float: left;
-    margin: 25px 25px;
+    margin: 25px 25px 25px 30px;
     position: relative;
 }
 
@@ -123,7 +123,40 @@ h1 {
     animation: tombolClose .5s .5s forwards;
 }
 
+.overlay:target .next,
+.overlay:target .prev {
+    animation: fade .5s .5s forwards;
+}
+
+/*navigasi*/
+.next,
+.prev {
+    width: 57px;
+    height: 93px;
+    background-image: url(../img/next.png);
+    position: absolute;
+    text-indent: -99999px;
+    top: 40%;
+    margin-left: 50px;
+    opacity: 0;
+}
+
+.prev {
+    background-image: url(../img/prev.png);
+    margin-left: -100px;
+}
+
 /*animasi*/
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes zoomDanFade {
     0% {
         transform: scale(0);
@@ -148,35 +181,90 @@ h1 {
     }
 }
 
-@media only screen and (max-width: 780px) {
-    .container {
-        max-width: 600px;
-    }
 
+
+@media only screen and (max-width: 760px) {
     .gallery li {
-        transform: scale(0.8);
-        margin: 15px 15px;
+        margin: 25px 35px 25px 50px;
     }
 }
 
-@media only screen and (max-width: 670px) {
-    .container {
-        max-width: 420px;
-    }
 
+@media only screen and (max-width: 675px) {
     .gallery li {
-        transform: scale(0.7);
-        margin: 15px 10px;
+        margin: 25px 40px 25px 90px;
     }
 }
 
-@media only screen and (max-width: 500px) {
-    .container {
-        max-width: 200px;
+
+@media only screen and (max-width: 560px) {
+    .gallery li {
+        margin: 25px 40px 25px 70px;
     }
 
+    .next,
+    .prev {
+        width: 57px;
+        height: 93px;
+        top: 90%;
+        margin-left: 0px;
+        opacity: 0;
+        transform: scale(.7);
+    }
+
+    .prev {
+        margin-left: 0px;
+    }
+
+    .overlay .full {
+        max-height: 100%;
+    }
+
+    .overlay .close {
+        top: 50px;
+        left: 50%;
+        margin-left: -20px;
+
+    }
+}
+
+@media only screen and (max-width: 520px) {
     .gallery li {
-        transform: scale(0.7);
-        margin: 10px 10px 10px 40px;
+        margin: 25px 20px 25px 70px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .gallery li {
+        margin: 25px 20px 25px 30px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .gallery li {
+        margin: 25px 15px 25px 15px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .gallery li {
+        margin: 25px 10px 25px 10px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .gallery li {
+        margin: 25px 10px 25px 70px;
+    }
+}
+
+@media only screen and (max-width: 277px) {
+    .gallery li {
+        margin: 25px 10px 25px 70px;
+    }
+
+    h1 {
+        font-size: 70px;
+
     }
 }
